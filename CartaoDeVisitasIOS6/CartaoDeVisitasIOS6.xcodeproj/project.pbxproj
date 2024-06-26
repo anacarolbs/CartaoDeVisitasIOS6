@@ -17,6 +17,7 @@
 		8E6395712C2BAE2800504E91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395702C2BAE2800504E91 /* Constants.swift */; };
 		8E6395732C2BB24900504E91 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395722C2BB24900504E91 /* SettingsViewController.swift */; };
 		8E6395762C2BB9E800504E91 /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395752C2BB9E800504E91 /* PresenterManager.swift */; };
+		8E6395782C2C89B900504E91 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395772C2C89B900504E91 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8E6395702C2BAE2800504E91 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E6395722C2BB24900504E91 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8E6395752C2BB9E800504E91 /* PresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterManager.swift; sourceTree = "<group>"; };
+		8E6395772C2C89B900504E91 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				8E63956B2C2B5D4900504E91 /* LoadingViewController.swift */,
 				8E6395722C2BB24900504E91 /* SettingsViewController.swift */,
+				8E6395772C2C89B900504E91 /* OnboardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				8E6395712C2BAE2800504E91 /* Constants.swift in Sources */,
 				8E6395572C2B504100504E91 /* AppDelegate.swift in Sources */,
 				8E6395592C2B504100504E91 /* SceneDelegate.swift in Sources */,
+				8E6395782C2C89B900504E91 /* OnboardingViewController.swift in Sources */,
 				8E63956C2C2B5D4900504E91 /* LoadingViewController.swift in Sources */,
 				8E63956F2C2BACD600504E91 /* Helper.swift in Sources */,
 				8E6395762C2BB9E800504E91 /* PresenterManager.swift in Sources */,

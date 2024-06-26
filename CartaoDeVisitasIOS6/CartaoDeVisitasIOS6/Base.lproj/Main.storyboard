@@ -3,8 +3,10 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,14 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ySd-eV-HdB">
-                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                                <rect key="frame" x="186.66666666666666" y="562" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cartao-de-visitas3" translatesAutoresizingMaskIntoConstraints="NO" id="nff-6Q-ifW">
+                                <rect key="frame" x="76.666666666666686" y="306" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="FAu-Wb-DUK"/>
+                                    <constraint firstAttribute="width" constant="240" id="Oy5-6h-5Yg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ySd-eV-HdB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BRd-Bf-MPb"/>
-                            <constraint firstItem="ySd-eV-HdB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kQ5-X8-J6O"/>
+                            <constraint firstItem="ySd-eV-HdB" firstAttribute="top" secondItem="nff-6Q-ifW" secondAttribute="bottom" constant="16" id="HCl-o1-DwT"/>
+                            <constraint firstItem="nff-6Q-ifW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PUv-oi-TKg"/>
+                            <constraint firstItem="ySd-eV-HdB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SwY-Gi-jBl"/>
+                            <constraint firstItem="nff-6Q-ifW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xIJ-B0-r6y"/>
                         </constraints>
                     </view>
                     <connections>
@@ -35,30 +46,100 @@
             </objects>
             <point key="canvasLocation" x="-2167.1755725190837" y="-20.422535211267608"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="Jyk-6q-Nv3">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" modalPresentationStyle="fullScreen" id="t9L-dW-PNJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" modalPresentationStyle="fullScreen" id="t9L-dW-PNJ" customClass="OnboardingViewController" customModule="CartaoDeVisitasIOS6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tab-dn-fJg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboarding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJf-rY-JBE">
-                                <rect key="frame" x="151.66666666666666" y="415.66666666666669" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvJ-1Y-a8g">
+                                <rect key="frame" x="24" y="748" width="345" height="56"/>
+                                <color key="backgroundColor" name="mainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Gr7-B5-JhG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Vamos começar">
+                                    <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getStartedButtonTapped:" destination="t9L-dW-PNJ" eventType="touchUpInside" id="UDj-EC-ahI"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N6M-v5-JYm">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N6M-v5-JYm" secondAttribute="height" multiplier="1:1" id="jqp-GL-fqG"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SNo-Nu-PyE">
+                                    <size key="itemSize" width="323" height="308"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellId" id="dKk-WA-hlT">
+                                        <rect key="frame" x="35" y="0.0" width="323" height="308"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RrR-3j-NvF">
+                                            <rect key="frame" x="0.0" y="0.0" width="323" height="308"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="mainColor"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="323" height="308"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="t9L-dW-PNJ" id="555-p7-bwF"/>
+                                    <outlet property="delegate" destination="t9L-dW-PNJ" id="SCN-9W-P8z"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GZ6-sd-MhY">
+                                <rect key="frame" x="138.66666666666666" y="409" width="115.66666666666666" height="25.666666666666686"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" name="mainColor"/>
+                            </pageControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hbj-Hh-6wZ">
+                                <rect key="frame" x="24" y="458.66666666666669" width="345" height="63.000000000000057"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seja muito bem-vindo(a)!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-yg-lPc">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="35.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seu cartão de visitas a um clique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLW-hv-2uL">
+                                        <rect key="frame" x="0.0" y="35.666666666666629" width="345" height="27.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ldg-b4-ofk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TJf-rY-JBE" firstAttribute="centerX" secondItem="tab-dn-fJg" secondAttribute="centerX" id="5PF-Zl-IYw"/>
-                            <constraint firstItem="TJf-rY-JBE" firstAttribute="centerY" secondItem="tab-dn-fJg" secondAttribute="centerY" id="NBw-01-7Vu"/>
+                            <constraint firstItem="hbj-Hh-6wZ" firstAttribute="top" secondItem="GZ6-sd-MhY" secondAttribute="bottom" constant="24" id="3oH-5d-68F"/>
+                            <constraint firstAttribute="trailing" secondItem="N6M-v5-JYm" secondAttribute="trailing" id="6SZ-Dp-RAz"/>
+                            <constraint firstItem="Ldg-b4-ofk" firstAttribute="bottom" secondItem="hvJ-1Y-a8g" secondAttribute="bottom" constant="48" id="Crv-RP-oKi"/>
+                            <constraint firstItem="GZ6-sd-MhY" firstAttribute="top" secondItem="N6M-v5-JYm" secondAttribute="bottom" constant="16" id="SnO-7V-Plu"/>
+                            <constraint firstItem="GZ6-sd-MhY" firstAttribute="centerX" secondItem="tab-dn-fJg" secondAttribute="centerX" id="WLq-KG-MQT"/>
+                            <constraint firstItem="hbj-Hh-6wZ" firstAttribute="leading" secondItem="Ldg-b4-ofk" secondAttribute="leading" constant="24" id="XjI-Co-vTN"/>
+                            <constraint firstItem="Ldg-b4-ofk" firstAttribute="trailing" secondItem="hvJ-1Y-a8g" secondAttribute="trailing" constant="24" id="ZiR-s9-Xxd"/>
+                            <constraint firstItem="N6M-v5-JYm" firstAttribute="top" secondItem="Ldg-b4-ofk" secondAttribute="top" id="aeD-n1-HZv"/>
+                            <constraint firstItem="N6M-v5-JYm" firstAttribute="leading" secondItem="Ldg-b4-ofk" secondAttribute="leading" id="ihK-E6-blS"/>
+                            <constraint firstItem="Ldg-b4-ofk" firstAttribute="trailing" secondItem="hbj-Hh-6wZ" secondAttribute="trailing" constant="24" id="tZE-Iy-4HA"/>
+                            <constraint firstItem="hvJ-1Y-a8g" firstAttribute="leading" secondItem="Ldg-b4-ofk" secondAttribute="leading" constant="24" id="ufD-R9-1wv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="we2-s6-IRe"/>
                     <connections>
+                        <outlet property="collectionView" destination="N6M-v5-JYm" id="Pdr-0e-L5Y"/>
                         <segue destination="QZW-L5-VqV" kind="showDetail" identifier="showLoginSignUp" id="r4P-1b-2TF"/>
                     </connections>
                 </viewController>
@@ -170,6 +251,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cartao-de-visitas3" width="512" height="512"/>
+        <namedColor name="mainColor">
+            <color red="0.32549019607843138" green="0.42745098039215684" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
