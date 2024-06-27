@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     
     weak var delegate: OnboardingDelegate?
     
-    private let isSuccessfulLogin = true
+    private let isSuccessfulLogin = false
     
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
@@ -28,6 +28,12 @@ class LoginViewController: UIViewController {
     case signUp
     }
     
+    private var errorMessage: String? {
+        didSet {
+            showErrorMessageIfNeeded(text: errorMessage)
+        }
+    }
+    
     private var currentPageType: PageType = .login {
         didSet {
             setupViewFor(pageType: currentPageType)
@@ -42,12 +48,17 @@ class LoginViewController: UIViewController {
     }
     
     private func setupViewFor(pageType: PageType) {
-        errorLabel.text = ""
+        errorMessage = nil
         passwordConfirmationTextField.isHidden = pageType == .login
         signUpButton.isHidden = pageType == .login
         forgetPasswordButton.isHidden = pageType == .signUp
         loginButton.isHidden = pageType == .signUp
         
+    }
+    
+    private func showErrorMessageIfNeeded(text: String?) {
+        errorLabel.isHidden = text == nil
+        errorLabel.text = text
     }
     
     @IBAction func forgetPasswordButtonTapped(_ sender: Any) {
@@ -71,7 +82,7 @@ class LoginViewController: UIViewController {
         if isSuccessfulLogin {
             delegate?.showMainTabBarController()
         } else {
-            
+            errorMessage = "Sua senha é inválida. Por favor, tente novamente."
         }
         
     }
