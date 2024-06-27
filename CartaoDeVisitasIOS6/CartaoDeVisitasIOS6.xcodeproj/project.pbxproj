@@ -18,6 +18,9 @@
 		8E6395732C2BB24900504E91 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395722C2BB24900504E91 /* SettingsViewController.swift */; };
 		8E6395762C2BB9E800504E91 /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395752C2BB9E800504E91 /* PresenterManager.swift */; };
 		8E6395782C2C89B900504E91 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395772C2C89B900504E91 /* OnboardingViewController.swift */; };
+		8E63957B2C2CD8D900504E91 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E63957A2C2CD8D900504E91 /* Slide.swift */; };
+		8E63957E2C2CE09800504E91 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E63957D2C2CE09800504E91 /* OnboardingCollectionViewCell.swift */; };
+		8E6395802C2CEDD400504E91 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E63957F2C2CEDD400504E91 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		8E6395722C2BB24900504E91 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8E6395752C2BB9E800504E91 /* PresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterManager.swift; sourceTree = "<group>"; };
 		8E6395772C2C89B900504E91 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8E63957A2C2CD8D900504E91 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		8E63957D2C2CE09800504E91 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E63957F2C2CEDD400504E91 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,8 @@
 		8E6395552C2B504100504E91 /* CartaoDeVisitasIOS6 */ = {
 			isa = PBXGroup;
 			children = (
+				8E63957C2C2CE07100504E91 /* Views */,
+				8E6395792C2CD8CE00504E91 /* Model */,
 				8E6395742C2BB9CE00504E91 /* Manager */,
 				8E63956D2C2BACC700504E91 /* Helper */,
 				8E63956A2C2B5D2800504E91 /* Controller */,
@@ -85,6 +93,7 @@
 				8E63956B2C2B5D4900504E91 /* LoadingViewController.swift */,
 				8E6395722C2BB24900504E91 /* SettingsViewController.swift */,
 				8E6395772C2C89B900504E91 /* OnboardingViewController.swift */,
+				8E63957F2C2CEDD400504E91 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +113,22 @@
 				8E6395752C2BB9E800504E91 /* PresenterManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		8E6395792C2CD8CE00504E91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E63957A2C2CD8D900504E91 /* Slide.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8E63957C2C2CE07100504E91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E63957D2C2CE09800504E91 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +208,11 @@
 				8E6395782C2C89B900504E91 /* OnboardingViewController.swift in Sources */,
 				8E63956C2C2B5D4900504E91 /* LoadingViewController.swift in Sources */,
 				8E63956F2C2BACD600504E91 /* Helper.swift in Sources */,
+				8E63957B2C2CD8D900504E91 /* Slide.swift in Sources */,
+				8E63957E2C2CE09800504E91 /* OnboardingCollectionViewCell.swift in Sources */,
 				8E6395762C2BB9E800504E91 /* PresenterManager.swift in Sources */,
 				8E6395732C2BB24900504E91 /* SettingsViewController.swift in Sources */,
+				8E6395802C2CEDD400504E91 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
