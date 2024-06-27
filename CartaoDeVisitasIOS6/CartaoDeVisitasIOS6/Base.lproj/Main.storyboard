@@ -187,6 +187,9 @@
                                     <segment title="Entrar"/>
                                     <segment title="Cadastre-se"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="QZW-L5-VqV" eventType="valueChanged" id="AY7-bi-25s"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SKm-DA-BBa">
                                 <rect key="frame" x="48" y="107" width="297" height="427"/>
@@ -225,6 +228,9 @@
                                         <rect key="frame" x="0.0" y="248.66666666666671" width="297" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Esqueceu a senha?"/>
+                                        <connections>
+                                            <action selector="forgetPasswordButtonTapped:" destination="QZW-L5-VqV" eventType="touchUpInside" id="WRr-nM-tBZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUI-QX-Qjz">
                                         <rect key="frame" x="0.0" y="299" width="297" height="56"/>
@@ -236,6 +242,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Cadastre-se">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="QZW-L5-VqV" eventType="touchUpInside" id="d3o-xa-ZxC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOe-DR-aD7">
                                         <rect key="frame" x="0.0" y="371" width="297" height="56"/>
@@ -247,6 +256,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Entrar">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="QZW-L5-VqV" eventType="touchUpInside" id="X9A-sF-0JQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -265,6 +277,16 @@
                             <constraint firstItem="hGL-N5-70e" firstAttribute="centerX" secondItem="KvZ-ec-Hbv" secondAttribute="centerX" id="sPN-Nl-Gj0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="sFU-iJ-kPc" id="Sjr-Qh-LtB"/>
+                        <outlet property="errorLabel" destination="j9e-G9-VWl" id="joE-P4-rg0"/>
+                        <outlet property="forgetPasswordButton" destination="0hQ-oc-xst" id="YYU-02-e4D"/>
+                        <outlet property="loginButton" destination="SOe-DR-aD7" id="iCT-AM-e1m"/>
+                        <outlet property="passwordConfirmationTextField" destination="ZAb-2E-fzN" id="F9p-dU-v33"/>
+                        <outlet property="passwordTextField" destination="FN3-TR-1iQ" id="e8n-Ub-5CH"/>
+                        <outlet property="segmentedControl" destination="hGL-N5-70e" id="wGU-LW-7T1"/>
+                        <outlet property="signUpButton" destination="aUI-QX-Qjz" id="A0p-Or-qqR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezX-ad-0pq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
