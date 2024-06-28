@@ -1,0 +1,6 @@
+framework module Pods_CartaoDeVisitasIOS6 {
+  umbrella header "Pods-CartaoDeVisitasIOS6-umbrella.h"
+
+  export *
+  module * { export * }
+}

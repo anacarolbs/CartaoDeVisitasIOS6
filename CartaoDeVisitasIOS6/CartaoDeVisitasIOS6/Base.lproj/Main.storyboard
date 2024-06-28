@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -192,7 +193,7 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SKm-DA-BBa">
-                                <rect key="frame" x="48" y="107" width="297" height="427"/>
+                                <rect key="frame" x="48" y="107.00000000000003" width="297" height="429.66666666666674"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFU-iJ-kPc">
                                         <rect key="frame" x="0.0" y="0.0" width="297" height="56"/>
@@ -200,7 +201,7 @@
                                             <constraint firstAttribute="height" constant="56" id="Dfz-59-icT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FN3-TR-1iQ">
                                         <rect key="frame" x="0.0" y="72" width="297" height="56"/>
@@ -208,7 +209,7 @@
                                             <constraint firstAttribute="height" constant="56" id="FKX-yy-51n"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a senha novamente" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAb-2E-fzN">
                                         <rect key="frame" x="0.0" y="144" width="297" height="56"/>
@@ -216,16 +217,16 @@
                                             <constraint firstAttribute="height" constant="56" id="ikQ-vE-SzH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seus dados estão errados" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9e-G9-VWl">
-                                        <rect key="frame" x="0.0" y="216" width="297" height="16.666666666666657"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seus dados estão errados" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9e-G9-VWl">
+                                        <rect key="frame" x="0.0" y="216" width="297" height="19.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-oc-xst">
-                                        <rect key="frame" x="0.0" y="248.66666666666671" width="297" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="251.33333333333334" width="297" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Esqueceu a senha?"/>
                                         <connections>
@@ -233,7 +234,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUI-QX-Qjz">
-                                        <rect key="frame" x="0.0" y="299" width="297" height="56"/>
+                                        <rect key="frame" x="0.0" y="301.66666666666669" width="297" height="56"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="8qu-gZ-zOs"/>
@@ -247,7 +248,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOe-DR-aD7">
-                                        <rect key="frame" x="0.0" y="371" width="297" height="56"/>
+                                        <rect key="frame" x="0.0" y="373.66666666666669" width="297" height="56"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="H7q-NY-LSZ"/>
@@ -303,7 +304,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cSM-SH-aW6">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="a1T-RT-aS8">
+                        <barButtonItem key="rightBarButtonItem" title="Sair" id="a1T-RT-aS8">
                             <connections>
                                 <action selector="logoutButtonTapped:" destination="znT-Eu-fYP" id="Bdo-zk-r3c"/>
                             </connections>
@@ -312,23 +313,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9y-GY-vlm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2646.5648854961833" y="319.71830985915494"/>
+            <point key="canvasLocation" x="2891" y="377"/>
         </scene>
-        <!--Item 1-->
+        <!--Home View Controller-->
         <scene sceneID="z3D-eF-q1y">
             <objects>
-                <viewController id="6HK-wY-EtD" sceneMemberID="viewController">
+                <viewController id="6HK-wY-EtD" customClass="HomeViewController" customModule="CartaoDeVisitasIOS6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jhr-hT-1gg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fae-Oi-3F3">
+                                <rect key="frame" x="24" y="414" width="345" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="lcu-zo-PtM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="a81-ej-Y6z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fae-Oi-3F3" firstAttribute="leading" secondItem="a81-ej-Y6z" secondAttribute="leading" constant="24" id="CBh-RC-oLq"/>
+                            <constraint firstItem="a81-ej-Y6z" firstAttribute="trailing" secondItem="fae-Oi-3F3" secondAttribute="trailing" constant="24" id="I1b-lm-WAB"/>
+                            <constraint firstItem="fae-Oi-3F3" firstAttribute="centerY" secondItem="Jhr-hT-1gg" secondAttribute="centerY" id="IfA-C4-cCO"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="g71-yc-5ob"/>
+                    <navigationItem key="navigationItem" id="kHq-0A-Xsu"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="fae-Oi-3F3" id="KJq-7S-Y7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uok-UR-Lcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2646.5648854961833" y="-323.23943661971833"/>
+            <point key="canvasLocation" x="2891" y="-323"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cbf-WY-HVK">
@@ -340,7 +360,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6HK-wY-EtD" kind="relationship" relationship="viewControllers" id="Yj5-Ms-uJ4"/>
+                        <segue destination="ev6-zM-QjK" kind="relationship" relationship="viewControllers" id="Yj5-Ms-uJ4"/>
                         <segue destination="br2-33-tfe" kind="relationship" relationship="viewControllers" id="SX3-gF-fvd"/>
                     </connections>
                 </tabBarController>
@@ -348,11 +368,11 @@
             </objects>
             <point key="canvasLocation" x="816" y="-20"/>
         </scene>
-        <!--Item 2-->
+        <!--Configurações-->
         <scene sceneID="PC3-pw-h8r">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="br2-33-tfe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="cuF-GS-7j2"/>
+                    <tabBarItem key="tabBarItem" title="Configurações" image="gearshape.fill" catalog="system" id="cuF-GS-7j2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bw0-uh-2wn">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -365,12 +385,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdc-Ct-Sy6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719.8473282442746" y="319.71830985915494"/>
+            <point key="canvasLocation" x="1943" y="377"/>
+        </scene>
+        <!--Início-->
+        <scene sceneID="Col-Dh-JBC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ev6-zM-QjK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Início" image="house.fill" catalog="system" id="g71-yc-5ob"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U5O-RC-NAG">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6HK-wY-EtD" kind="relationship" relationship="rootViewController" id="RCm-Cr-8EE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Q1-IA-rst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="-323"/>
         </scene>
     </scenes>
     <resources>
         <image name="cartao-de-visitas3" width="512" height="512"/>
         <image name="equal" catalog="system" width="128" height="73"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <namedColor name="mainColor">
             <color red="0.32499998807907104" green="0.42699998617172241" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

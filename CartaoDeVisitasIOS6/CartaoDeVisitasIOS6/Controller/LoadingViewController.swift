@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoadingViewController: UIViewController {
     
-    private let isUserLoggedIn = false
+    private var isUserLoggedIn: Bool {
+        return Auth.auth().currentUser != nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,7 @@ class LoadingViewController: UIViewController {
 //                window.rootViewController = mainTabBarController
 //            }
         } else {
-            performSegue(withIdentifier: K.Segue.showOnboardingScreen, sender: nil)
+            performSegue(withIdentifier: K.Segue.showOnboarding, sender: nil)
         }
     }
 }

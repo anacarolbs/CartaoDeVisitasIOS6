@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import MBProgressHUD
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
     weak var delegate: OnboardingDelegate?
-    
-    private let isSuccessfulLogin = false
-    
+    private let authManager = AuthManager()
+        
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var forgetPasswordButton: UIButton!
@@ -47,6 +48,11 @@ class LoginViewController: UIViewController {
 //        view.backgroundColor = .purple
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailTextField.becomeFirstResponder()
+    }
+    
     private func setupViewFor(pageType: PageType) {
         errorMessage = nil
         passwordConfirmationTextField.isHidden = pageType == .login
@@ -76,15 +82,69 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
+        
+        guard let email = emailTextField.text,
+                !email.isEmpty,
+                let password = passwordTextField.text,
+                !password.isEmpty,
+                let passwordConfirmation = passwordConfirmationTextField.text,
+                !passwordConfirmation.isEmpty else {
+            showErrorMessageIfNeeded(text: "Confirme as informações inseridas.")
+            return
+        }
+        
+        guard password == passwordConfirmation else {
+            showErrorMessageIfNeeded(text: "Senha está incorreta")
+            return
+        }
+        
+        MBProgressHUD.showAdded(to: view, animated: true)
+        
+        authManager.signUpNewUser(withEmail: email, password: password) { [weak self] (result) in
+            guard let this = self else { return }
+            MBProgressHUD.hide(for: this.view, animated: true)
+            switch result {
+            case .success:
+                this.delegate?.showMainTabBarController()
+            case .failure(let error):
+                this.showErrorMessageIfNeeded(text: error.localizedDescription)
+            }
+        }
+        
+//        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+//            guard let this = self else { return }
+//            MBProgressHUD.hide(for: this.view, animated: true)
+//            if let error = error {
+//                this.showErrorMessageIfNeeded(text: error.localizedDescription)
+////                print(error.localizedDescription)
+//            } else if let _ = result?.user.uid {
+//                this.delegate?.showMainTabBarController()
+//            }
+//        }
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        if isSuccessfulLogin {
-            delegate?.showMainTabBarController()
-        } else {
-            errorMessage = "Sua senha é inválida. Por favor, tente novamente."
+        view.endEditing(true)
+        
+        guard let email = emailTextField.text, 
+                !email.isEmpty,
+                let password = passwordTextField.text,
+                !password.isEmpty else {
+                showErrorMessageIfNeeded(text: "Formato inválido. Por favor, verifique.")
+            return
         }
         
+        MBProgressHUD.showAdded(to: view, animated: true)
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+            guard let this = self else { return }
+            MBProgressHUD.hide(for: this.view, animated: true)
+            if let error = error {
+                this.showErrorMessageIfNeeded(text: error.localizedDescription)
+            } else if let _ = result?.user.uid {
+                this.delegate?.showMainTabBarController()
+            }
+        }
     }
     
 }

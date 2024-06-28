@@ -8,9 +8,19 @@
 import Foundation
 
 struct K {
+    
+    struct ReuseIdentifier {
+        static let onboardingCollectionViewCell = "cellId"
+    }
+    
+    struct NavigationTitle {
+        static let settings = "Configurações"
+        static let home = "Início"
+    }
+    
     struct Segue {
-        static let showOnboardingScreen = "showOnboarding"
-        static let showLoginSignUpScreen = "showLoginSignUp"
+        static let showOnboarding = "showOnboarding"
+        static let showLoginSignUp = "showLoginSignUp"
 
     }
     

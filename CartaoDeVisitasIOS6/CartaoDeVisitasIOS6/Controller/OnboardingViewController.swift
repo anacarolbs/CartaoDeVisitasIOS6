@@ -45,11 +45,11 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func getStartedButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: K.Segue.showLoginSignUpScreen, sender: nil)
+        performSegue(withIdentifier: K.Segue.showLoginSignUp, sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.Segue.showLoginSignUpScreen {
+        if segue.identifier == K.Segue.showLoginSignUp {
             if let destination = segue.destination as? LoginViewController {
                 destination.delegate = self
             }
@@ -69,7 +69,8 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! OnboardingCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.ReuseIdentifier.onboardingCollectionViewCell, for: indexPath) as? OnboardingCollectionViewCell else { return UICollectionViewCell() }
+        
         let imageName = Slide.collection[indexPath.item].imageName
         let image = UIImage(named: imageName) ?? UIImage()
         cell.configure(image: image)
