@@ -7,6 +7,7 @@ target 'CartaoDeVisitasIOS6' do
 
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'Firebase/Auth'
+  pod 'Loaf'
 
 
 end

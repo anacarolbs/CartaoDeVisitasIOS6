@@ -7,7 +7,8 @@
 
 import UIKit
 import MBProgressHUD
-import FirebaseAuth
+//import FirebaseAuth
+import Loaf
 
 class LoginViewController: UIViewController {
     
@@ -68,6 +69,33 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgetPasswordButtonTapped(_ sender: Any) {
+        let alertController = UIAlertController(title: "Esqueceu a senha?", message: "Por favor insira seu e-mail.", preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: nil)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            guard let this = self else { return }
+            if let textField = alertController.textFields?.first, let email = textField.text, !email.isEmpty {
+                this.authManager.resetPassword(withEmail: email) { (result) in
+                    switch result {
+                    case .success:
+                        this.showAlert(title: "Solicitação enviada", message: "Por favor, cheque seu e-mail para encontrar o link de alteração de senha.")
+                    case .failure(let error):
+                        Loaf(error.localizedDescription, state: .error, location: .top, sender: this).show()
+                    }
+                }
+            }
+        }
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
@@ -110,17 +138,6 @@ class LoginViewController: UIViewController {
                 this.showErrorMessageIfNeeded(text: error.localizedDescription)
             }
         }
-        
-//        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
-//            guard let this = self else { return }
-//            MBProgressHUD.hide(for: this.view, animated: true)
-//            if let error = error {
-//                this.showErrorMessageIfNeeded(text: error.localizedDescription)
-////                print(error.localizedDescription)
-//            } else if let _ = result?.user.uid {
-//                this.delegate?.showMainTabBarController()
-//            }
-//        }
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -136,13 +153,14 @@ class LoginViewController: UIViewController {
         
         MBProgressHUD.showAdded(to: view, animated: true)
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+        authManager.loginUser(withEmail: email, password: password) { [weak self] (result) in
             guard let this = self else { return }
             MBProgressHUD.hide(for: this.view, animated: true)
-            if let error = error {
-                this.showErrorMessageIfNeeded(text: error.localizedDescription)
-            } else if let _ = result?.user.uid {
+            switch result {
+            case .success:
                 this.delegate?.showMainTabBarController()
+            case .failure(let error):
+                this.showErrorMessageIfNeeded(text: error.localizedDescription)
             }
         }
     }

@@ -41,12 +41,14 @@ PODS:
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
   - GTMSessionFetcher/Core (3.5.0)
+  - Loaf (0.7.0)
   - MBProgressHUD (1.1.0)
   - PromisesObjC (2.4.0)
   - RecaptchaInterop (100.0.0)
 
 DEPENDENCIES:
   - Firebase/Auth
+  - Loaf
   - MBProgressHUD (~> 1.1.0)
 
 SPEC REPOS:
@@ -58,6 +60,7 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - GoogleUtilities
     - GTMSessionFetcher
+    - Loaf
     - MBProgressHUD
     - PromisesObjC
     - RecaptchaInterop
@@ -70,10 +73,11 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: 58d07f1362fddeb0feb6a857d1d1d1c5e558e698
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
+  Loaf: d69937cd00649f3fa260beb8b7aef0a1feb861ef
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
 
-PODFILE CHECKSUM: ac8c9a3a3c265ae99ecf02335cfad0e85c6365aa
+PODFILE CHECKSUM: 3298d6ae70eb52bb6e415011fcab693b5360c6b0
 
 COCOAPODS: 1.15.2

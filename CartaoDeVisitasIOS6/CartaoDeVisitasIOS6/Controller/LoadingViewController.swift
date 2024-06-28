@@ -6,13 +6,16 @@
 //
 
 import UIKit
-import FirebaseAuth
+//import FirebaseAuth
+
 
 class LoadingViewController: UIViewController {
     
-    private var isUserLoggedIn: Bool {
-        return Auth.auth().currentUser != nil
-    }
+    private let authManager = AuthManager()
+    
+//    private var isUserLoggedIn: Bool {
+//        return Auth.auth().currentUser != nil
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +38,7 @@ class LoadingViewController: UIViewController {
         //if the user is logged in => main tab controller
         //if the user is not logged in => show the onboarding controller
         
-        if isUserLoggedIn {
+        if authManager.isUserLoggedIn() {
             PresenterManager.shared.show(vc: .mainTabBarController)
 //            let mainTabBarController = UIStoryboard(name: K.StoryboardID.main, bundle: nil).instantiateViewController(identifier: K.StoryboardID.mainTabBarController)
 //            if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,  

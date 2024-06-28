@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         if let email = Auth.auth().currentUser?.email {
             emailLabel.text = email
         } else {
-            emailLabel.text = "Algo está terrivelmente errado!"
+            emailLabel.text = "Algo está errado!"
         }
     }
 }
